@@ -3,4 +3,3 @@ openai
 matplotlib==3.5.3
 langchain
 joblib
-base64==8.32
