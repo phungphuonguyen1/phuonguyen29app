@@ -1,4 +1,5 @@
 import streamlit as st
+from langchain.llms import OpenAI
 import numpy as np
 import pandas as pd
 from sklearn import datasets
