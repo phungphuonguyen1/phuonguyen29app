@@ -1,7 +1,7 @@
 streamlit
 python >=3.10
 openai
+matplotlib==3.5.3
 langchain
 joblib
 base64
-matplotlib
