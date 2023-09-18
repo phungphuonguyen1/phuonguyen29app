@@ -58,22 +58,6 @@ st.write("""
         Length of polymer chain: {},
         Distance range: {} - {} nm
          """.format(max(df['Po_NP']),max(df['NP_NP']),max(df['D_aim']),max(df['Phi']),max(df['Chain length']),min(df['distance']),max(df['distance'])))
-'''dat= pd.read_csv('ss.csv')
-dataframe_x=dat.iloc[:,:]
-dataframe_y=dat.iloc[:,3:4]
-
-# Prediction function
-def prediction_fun(trainx,trainy,testx, model):
-    model.fit(trainx, trainy)
-    predictions = model.predict(testx)
-    return predictions
-
-train_x, test_x, train_y, test_y =train_test_split(dataframe_x , dataframe_y , test_size = 0.2, random_state = 42, shuffle = True)
-#st.write(test_x)
-predictions1= prediction_fun(train_x,train_y,df, DecisionTreeRegressor())'''
-
-import joblib
-
 # Load the model
 model = joblib.load('model.pkl')
 
@@ -95,12 +79,11 @@ ax.set_title('Prediction')
 # Display the plot in Streamlit
 st.pyplot(fig)
 
-'''# -- Allow data download
+# -- Allow data download
 download = df
 df = pd.DataFrame(download)
 csv = df.to_csv(index=False)
 b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-fn =  str(max(df['material']))+' - ' + str(max(df['R']))+' - '+str(min(df['Wavelength']))+'/'+str(max(df['Wavelength'])) + '.csv'
+fn =  str(max(df['Po_NP']))+' - ' +max(df['NP_NP']))+max(df['D_aim']))+max(df['Phi']))+max(df['Chain length']))+' - '+str(min(df['distance']))+'/'+str(max(df['distance'])) + '.csv'
 href = f'<a href="data:file/csv;base64,{b64}" download="{fn}">Download Data as CSV File</a>'
 st.markdown(href, unsafe_allow_html=True)
-'''
