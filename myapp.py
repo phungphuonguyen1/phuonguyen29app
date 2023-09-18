@@ -84,6 +84,6 @@ download = df
 df = pd.DataFrame(download)
 csv = df.to_csv(index=False)
 b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-fn =  str(max(df['Po_NP']))+' - ' +max(df['NP_NP']))+max(df['D_aim']))+max(df['Phi']))+max(df['Chain length']))+' - '+str(min(df['distance']))+'/'+str(max(df['distance'])) + '.csv'
+fn =  str(max(df['Po_NP']))+' - ' +max(df['NP_NP']))+max(df['D_aim'])+max(df['Phi'])+max(df['Chain length'])+' - '+str(min(df['distance']))+'/'+str(max(df['distance'])) + '.csv'
 href = f'<a href="data:file/csv;base64,{b64}" download="{fn}">Download Data as CSV File</a>'
 st.markdown(href, unsafe_allow_html=True)
